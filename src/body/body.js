@@ -1,6 +1,6 @@
 import React from "react";
 import "./body.css";
-import daft from "./daft.jpeg";
+import daft from "./daft.jpg";
 
 export function BodySite() {
   return (
