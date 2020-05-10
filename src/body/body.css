@@ -1,4 +1,9 @@
-.BodySite {
-  position: absolute;
-  top: 8%;
+.DaftPunkText {
+  text-align: center;
+  font-size: 25px;
+}
+
+.DaftPunkImg {
+  border-radius: 150px;
+  height: 300px;
 }

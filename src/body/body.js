@@ -5,7 +5,8 @@ import daft from "./daft.jpeg";
 export function BodySite() {
   return (
     <div className="BodySite">
-      <img src={daft} className="DaftPunk"></img>
+      <p className="DaftPunkText">Daft Punk</p>
+      <img src={daft} className="DaftPunkImg"></img>
     </div>
   );
 }
