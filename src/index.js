@@ -2,5 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import { Header } from "./header/header.js";
+import { BodySite } from "./body/body.js";
 
-ReactDOM.render(<Header />, document.body);
+function All() {
+  return (
+    <div>
+      <Header />
+      <BodySite />
+    </div>
+  );
+}
+
+ReactDOM.render(<All />, document.body);
