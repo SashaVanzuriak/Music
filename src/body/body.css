@@ -3,6 +3,12 @@
   font-size: 25px;
 }
 
+.NonClick {
+  height: 400px;
+  width: 400px;
+  border-radius: 200px;
+}
+
 .DaftPunkImg {
   height: 400px;
   width: 400px;

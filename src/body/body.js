@@ -6,7 +6,7 @@ import { PresetColorTypes } from "antd/lib/_util/colors";
 class Cycle extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { name: "hello" };
+    this.state = { name: "NonClick" };
     this.toggle = this.toggle.bind(this);
   }
 
