@@ -6,16 +6,18 @@ import { PresetColorTypes } from "antd/lib/_util/colors";
 class Cycle extends React.Component {
   constructor(props) {
     super(props);
-    this.setState({ name: "hello" });
+    this.state = { name: "hello" };
     this.toggle = this.toggle.bind(this);
   }
 
   toggle = () => {
-    this.name = "DaftPunkImg";
+    this.setState((state) => ({ name: "DaftPunkImg" }));
   };
 
   render() {
-    return <img src={daft} className={this.name} onClick={this.toggle}></img>;
+    return (
+      <img src={daft} className={this.state.name} onClick={this.toggle}></img>
+    );
   }
 }
 
