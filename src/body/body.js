@@ -12,6 +12,9 @@ class Cycle extends React.Component {
 
   toggle = () => {
     this.setState((state) => ({ name: "DaftPunkImg" }));
+    if (this.state.name == "DaftPunkImg") {
+      this.setState((state) => ({ name: "NonClick" }));
+    }
   };
 
   render() {
