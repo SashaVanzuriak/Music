@@ -1,7 +1,7 @@
 import React from "react";
 import "./body.css";
 import daft from "./daft.jpg";
-import { PresetColorTypes } from "antd/lib/_util/colors";
+import { Icon } from "evergreen-ui";
 
 class Cycle extends React.Component {
   constructor(props) {
@@ -19,7 +19,10 @@ class Cycle extends React.Component {
 
   render() {
     return (
-      <img src={daft} className={this.state.name} onClick={this.toggle}></img>
+      <div>
+        <img src={daft} className={this.state.name} onClick={this.toggle}></img>
+        <Icon icon="play" className="IconPlay" />
+      </div>
     );
   }
 }
