@@ -21,7 +21,7 @@ class Cycle extends React.Component {
     return (
       <div>
         <img src={daft} className={this.state.name} onClick={this.toggle}></img>
-        <Icon icon="play" className="IconPlay" />
+        <Icon icon="play" size={80} />
       </div>
     );
   }
