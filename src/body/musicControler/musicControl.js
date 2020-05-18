@@ -1,25 +1,30 @@
 import React from "react";
 import "./musicControl.css";
 import daft from "./daft.jpg";
-import { Icon } from "evergreen-ui";
+import { Icon, RedoIcon } from "evergreen-ui";
 import GetLucky from "./GetLucky.mp3";
 
 export class Cycle extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { name: "NonClick", iconName: "play", audioPlay: "pause" };
+    this.state = {
+      name: "DaftPunkImg",
+      cycleStyle: styles.stopCycleAnimation,
+      iconName: "play",
+      audioPlay: "",
+    };
     this.toggle = this.toggle.bind(this);
   }
 
   toggle = () => {
     this.setState((state) => ({
-      name: "DaftPunkImg",
+      cycleStyle: styles.cycleAnimation,
       iconName: "pause",
-      audioPlay: "play",
+      audioPlay: "pause",
     }));
-    if (this.state.name == "DaftPunkImg") {
+    if (this.state.cycleStyle == styles.cycleAnimation) {
       this.setState((state) => ({
-        name: "NonClick",
+        cycleStyle: styles.stopCycleAnimation,
         iconName: "play",
         audioPlay: "",
       }));
@@ -29,8 +34,17 @@ export class Cycle extends React.Component {
   render() {
     return (
       <div>
-        <img src={daft} className={this.state.name}></img>
-        <Icon icon={this.state.iconName} size={80} onClick={this.toggle} />
+        <img
+          src={daft}
+          className={this.state.name}
+          style={this.state.cycleStyle}
+        ></img>
+        <Icon
+          icon={this.state.iconName}
+          className="IconStop"
+          size={80}
+          onClick={this.toggle}
+        />
         <audio
           src={GetLucky}
           onplay="play"
@@ -40,3 +54,10 @@ export class Cycle extends React.Component {
     );
   }
 }
+
+const styles = {
+  cycleAnimation: {},
+  stopCycleAnimation: {
+    animationPlayState: "paused",
+  },
+};

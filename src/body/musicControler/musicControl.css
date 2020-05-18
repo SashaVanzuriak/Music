@@ -1,3 +1,7 @@
+img {
+  animation-play-state: paused;
+}
+
 .DaftPunkText {
   text-align: center;
   font-size: 25px;
@@ -13,9 +17,9 @@
   height: 400px;
   width: 400px;
   border-radius: 200px;
-  -webkit-animation: spin 4s linear infinite;
-  -moz-animation: spin 4s linear infinite;
-  animation: spin 4s linear infinite;
+  -webkit-animation: spin 4s linear infinite normal;
+  -moz-animation: spin 4s linear infinite normal;
+  animation: spin 4s linear infinite normal;
 }
 
 @-moz-keyframes spin {
@@ -32,5 +36,8 @@
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(359deg);
   }
 }
