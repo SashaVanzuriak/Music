@@ -1,7 +1,24 @@
 .DaftPunkText {
-  font-family: Cursive;
+  font-family: cursive;
   text-align: center;
   font-size: 30px;
+}
+
+.musicText {
+  position: absolute;
+  left: 50%;
+  font-family: cursive;
+  max-width: 40%;
+  font-size: 25px;
+  top: 35%;
+}
+
+.nameMusic {
+  position: absolute;
+  top: 25%;
+  left: 65%;
+  font-size: 30px;
+  font-family: cursive;
 }
 
 .IconStop {

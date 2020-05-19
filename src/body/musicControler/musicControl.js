@@ -48,6 +48,20 @@ export class Cycle extends React.Component {
         <div id="music">
           <audio onPlaying="play" src={GetLucky} />
         </div>
+        <div>
+          <p className="nameMusic">Get Lucky</p>
+          <p className="musicText">
+            "Get Lucky" is a song by French electronic music duo Daft Punk,
+            featuring vocals by Pharrell Williams and co-written by the duo,
+            Williams, and Nile Rodgers. It is the lead single from Daft Punk's
+            fourth studio album, Random Access Memories.Before its release as a
+            single, "Get Lucky" was featured in television advertisements
+            broadcast during Saturday Night Live, after which Rodgers and
+            Williams announced their involvement in the track.Small excerpts
+            also appear throughout the promotional video series The
+            Collaborators.
+          </p>
+        </div>
       </div>
     );
   }
