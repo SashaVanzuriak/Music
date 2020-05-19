@@ -46,7 +46,7 @@ export class Cycle extends React.Component {
           onClick={this.toggle}
         />
         <div id="music">
-          <audio onPlaying="play" src={GetLucky}></audio>
+          <audio onPlaying="play" src={GetLucky} />
         </div>
       </div>
     );

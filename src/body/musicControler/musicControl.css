@@ -1,16 +1,18 @@
 .DaftPunkText {
   font-family: Cursive;
   text-align: center;
-  font-size: 25px;
+  font-size: 30px;
 }
 
-.NonClick {
-  height: 400px;
-  width: 400px;
-  border-radius: 200px;
+.IconStop {
+  position: absolute;
+  top: 25%;
 }
 
 .DaftPunkImg {
+  position: absolute;
+  top: 25%;
+  left: 15%;
   height: 400px;
   width: 400px;
   border-radius: 200px;
