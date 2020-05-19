@@ -20,13 +20,13 @@ export class Cycle extends React.Component {
     this.setState((state) => ({
       cycleStyle: styles.cycleAnimation,
       iconName: "pause",
-      audioPlay: "pause",
+      audioPlay: "AutoPlay",
     }));
     if (this.state.cycleStyle == styles.cycleAnimation) {
       this.setState((state) => ({
         cycleStyle: styles.stopCycleAnimation,
         iconName: "play",
-        audioPlay: "",
+        audioPlay: "play",
       }));
     }
   };
@@ -45,11 +45,9 @@ export class Cycle extends React.Component {
           size={80}
           onClick={this.toggle}
         />
-        <audio
-          src={GetLucky}
-          onplay="play"
-          autoPlay={this.state.audioPlay}
-        ></audio>
+        <div id="music">
+          <audio onPlaying="play" src={GetLucky}></audio>
+        </div>
       </div>
     );
   }
