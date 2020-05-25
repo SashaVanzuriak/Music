@@ -35,9 +35,6 @@ export class Cycle extends React.Component {
         audioPlay: "false",
       }));
     }
-    if (question !== "") {
-      question = "";
-    }
     question = <audio autoPlay src={GetLucky} loop="true" hidden="true" />;
   };
   //Icon onClick start this code

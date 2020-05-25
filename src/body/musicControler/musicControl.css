@@ -8,11 +8,20 @@
   position: absolute;
   left: 97%;
   top: 43%;
+  border-radius: 10px;
+}
+
+.nextMusicIcon:hover {
+  background-color: #c0c0c0;
 }
 
 .backMusicIcon {
   position: absolute;
   top: 43%;
+}
+
+.backMusicIcon:hover {
+  background-color: #c0c0c0;
 }
 
 .musicText {
