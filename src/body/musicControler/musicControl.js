@@ -4,6 +4,12 @@ import daft from "./daft.jpg";
 import { Icon, RedoIcon } from "evergreen-ui";
 import GetLucky from "./GetLucky.mp3";
 
+function MusicLike() {
+  return <audio autoPlay src={GetLucky} loop="true" hidden="true" />;
+}
+
+let quetion = "";
+
 export class Cycle extends React.Component {
   constructor(props) {
     super(props);
@@ -11,24 +17,28 @@ export class Cycle extends React.Component {
       name: "DaftPunkImg",
       cycleStyle: styles.stopCycleAnimation,
       iconName: "play",
-      audioPlay: "",
+      audioPlay: "autoPlay",
+      srcMusic: "",
     };
     this.toggle = this.toggle.bind(this);
+    this.auto = React.createRef();
   }
 
   toggle = () => {
     this.setState((state) => ({
       cycleStyle: styles.cycleAnimation,
       iconName: "pause",
-      audioPlay: "AutoPlay",
+      audioPlay: "false",
+      srcMusic: { GetLucky },
     }));
     if (this.state.cycleStyle == styles.cycleAnimation) {
       this.setState((state) => ({
         cycleStyle: styles.stopCycleAnimation,
         iconName: "play",
-        audioPlay: "play",
+        audioPlay: "false",
       }));
     }
+    quetion = <audio autoPlay src={GetLucky} loop="true" hidden="true" />;
   };
 
   render() {
@@ -45,9 +55,6 @@ export class Cycle extends React.Component {
           size={80}
           onClick={this.toggle}
         />
-        <div id="music">
-          <audio onPlaying="play" src={GetLucky} />
-        </div>
         <div>
           <p className="nameMusic">Get Lucky</p>
           <p className="musicText">
@@ -62,6 +69,7 @@ export class Cycle extends React.Component {
             Collaborators.
           </p>
         </div>
+        {quetion}
       </div>
     );
   }

@@ -1,3 +1,14 @@
+embed {
+  position: absolute;
+  top: -1000in;
+  left: -1000in;
+  display: none;
+}
+
+Icon:hover + embed {
+  display: block;
+}
+
 .DaftPunkText {
   font-family: cursive;
   text-align: center;
