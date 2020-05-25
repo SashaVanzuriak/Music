@@ -8,7 +8,7 @@ function MusicLike() {
   return <audio autoPlay src={GetLucky} loop="true" hidden="true" />;
 }
 
-let quetion = "";
+let question = "";
 
 export class Cycle extends React.Component {
   constructor(props) {
@@ -38,7 +38,10 @@ export class Cycle extends React.Component {
         audioPlay: "false",
       }));
     }
-    quetion = <audio autoPlay src={GetLucky} loop="true" hidden="true" />;
+    if (question !== "") {
+      question = "";
+    }
+    question = <audio autoPlay src={GetLucky} loop="true" hidden="true" />;
   };
 
   render() {
@@ -69,7 +72,11 @@ export class Cycle extends React.Component {
             Collaborators.
           </p>
         </div>
-        {quetion}
+        {question}
+        <div className="changeMusic">
+          <Icon className="nextMusicIcon" icon="chevron-right" size={40} />
+          <Icon icon="chevron-left" size={40} />
+        </div>
       </div>
     );
   }
