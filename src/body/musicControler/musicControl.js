@@ -75,7 +75,7 @@ export class Cycle extends React.Component {
         {question}
         <div className="changeMusic">
           <Icon className="nextMusicIcon" icon="chevron-right" size={40} />
-          <Icon icon="chevron-left" size={40} />
+          <Icon className="backMusicIcon" icon="chevron-left" size={40} />
         </div>
       </div>
     );

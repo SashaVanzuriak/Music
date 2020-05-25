@@ -1,18 +1,18 @@
-embed {
-  position: absolute;
-  top: -1000in;
-  left: -1000in;
-  display: none;
-}
-
-Icon:hover + embed {
-  display: block;
-}
-
 .DaftPunkText {
   font-family: cursive;
   text-align: center;
   font-size: 30px;
+}
+
+.nextMusicIcon {
+  position: absolute;
+  left: 97%;
+  top: 43%;
+}
+
+.backMusicIcon {
+  position: absolute;
+  top: 43%;
 }
 
 .musicText {
