@@ -4,11 +4,8 @@ import daft from "./daft.jpg";
 import { Icon, RedoIcon } from "evergreen-ui";
 import GetLucky from "./GetLucky.mp3";
 
-function MusicLike() {
-  return <audio autoPlay src={GetLucky} loop="true" hidden="true" />;
-}
-
 let question = "";
+// add new sting next in class add music
 
 export class Cycle extends React.Component {
   constructor(props) {
@@ -43,6 +40,7 @@ export class Cycle extends React.Component {
     }
     question = <audio autoPlay src={GetLucky} loop="true" hidden="true" />;
   };
+  //Icon onClick start this code
 
   render() {
     return (
@@ -88,3 +86,4 @@ const styles = {
     animationPlayState: "paused",
   },
 };
+// add style this style help img don't moving
