@@ -6,18 +6,19 @@
 
 .nextMusicIcon {
   position: absolute;
-  left: 97%;
+  left: 96.5%;
   top: 43%;
-  border-radius: 10px;
+  cursor: pointer;
 }
 
 .nextMusicIcon:hover {
-  background-color: #c0c0c0;
+  color: red;
 }
 
 .backMusicIcon {
   position: absolute;
   top: 43%;
+  cursor: pointer;
 }
 
 .backMusicIcon:hover {
@@ -44,6 +45,7 @@
 .IconStop {
   position: absolute;
   top: 25%;
+  cursor: pointer;
 }
 
 .DaftPunkImg {
