@@ -10,6 +10,7 @@
     "evergreen-ui": "^4.27.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-remove": "0.1.0-beta.1",
     "react-scripts": "3.4.1",
     "react-sound": "^1.2.0"
   },
