@@ -3,12 +3,9 @@ import "./musicControl.css";
 import daft from "./daft.jpg";
 import { Icon, RedoIcon } from "evergreen-ui";
 import GetLucky from "./GetLucky.mp3";
-import { Remove } from "react-remove";
 
 let question = "";
 // add new sting next in class add music
-let deletMuic = "";
-// add new string remove music
 
 export class Cycle extends React.Component {
   constructor(props) {
@@ -37,7 +34,6 @@ export class Cycle extends React.Component {
         iconName: "play",
         audioPlay: "false",
       }));
-      deletMuic = <Remove id="music" />;
     }
     question = <audio autoPlay src={GetLucky} loop="true" hidden="true" />;
   };
@@ -72,10 +68,7 @@ export class Cycle extends React.Component {
             Collaborators.
           </p>
         </div>
-        <div id="music">
-          {question}
-          {deletMuic}
-        </div>
+        <div id="music">{question}</div>
         <div className="changeMusic">
           <Icon className="nextMusicIcon" icon="chevron-right" size={60} />
           <Icon className="backMusicIcon" icon="chevron-left" size={60} />
