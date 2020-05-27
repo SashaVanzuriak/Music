@@ -5,6 +5,7 @@ import { Icon, RedoIcon } from "evergreen-ui";
 import GetLucky from "./GetLucky.mp3";
 
 let question = "";
+let delet = "";
 // add new sting next in class add music
 
 export class Cycle extends React.Component {
@@ -29,13 +30,23 @@ export class Cycle extends React.Component {
       srcMusic: { GetLucky },
     }));
     if (this.state.cycleStyle == styles.cycleAnimation) {
+      delet = document.querySelector(".audio");
       this.setState((state) => ({
         cycleStyle: styles.stopCycleAnimation,
         iconName: "play",
         audioPlay: "false",
       }));
+      delet.remove();
     }
-    question = <audio autoPlay src={GetLucky} loop="true" hidden="true" />;
+    question = (
+      <audio
+        className="audio"
+        autoPlay
+        src={GetLucky}
+        loop="true"
+        hidden="true"
+      />
+    );
   };
   //Icon onClick start this code
 
