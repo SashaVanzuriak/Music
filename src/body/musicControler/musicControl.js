@@ -23,12 +23,16 @@ export class Cycle extends React.Component {
   }
 
   toggle = () => {
+    question = "";
     this.setState((state) => ({
       cycleStyle: styles.cycleAnimation,
       iconName: "pause",
       audioPlay: "false",
       srcMusic: { GetLucky },
     }));
+    if (delet == document.querySelector(".audio")) {
+      delet.play();
+    }
     if (this.state.cycleStyle == styles.cycleAnimation) {
       delet = document.querySelector(".audio");
       this.setState((state) => ({
@@ -36,7 +40,7 @@ export class Cycle extends React.Component {
         iconName: "play",
         audioPlay: "false",
       }));
-      delet.remove();
+      delet.pause();
     }
     question = (
       <audio
@@ -48,7 +52,7 @@ export class Cycle extends React.Component {
       />
     );
   };
-  //Icon onClick start this code
+  //Icon onClick() start this code
 
   render() {
     return (
