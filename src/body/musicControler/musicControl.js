@@ -1,12 +1,14 @@
 import React from "react";
 import "./musicControl.css";
 import daft from "./daft.jpg";
-import { Icon, RedoIcon } from "evergreen-ui";
+import { Icon } from "evergreen-ui";
 import GetLucky from "./GetLucky.mp3";
+// import uses things
 
 let question = "";
-let delet = "";
 // add new sting next in class add music
+let delet = "";
+// add new string next  stop music or return play music
 
 export class Cycle extends React.Component {
   constructor(props) {
@@ -20,6 +22,7 @@ export class Cycle extends React.Component {
     };
     this.toggle = this.toggle.bind(this);
     this.auto = React.createRef();
+    // add states and bind and change in future
   }
 
   toggle = () => {
@@ -32,6 +35,7 @@ export class Cycle extends React.Component {
     }));
     if (delet == document.querySelector(".audio")) {
       delet.play();
+      // if delet = true this return music to play
     }
     if (this.state.cycleStyle == styles.cycleAnimation) {
       delet = document.querySelector(".audio");
@@ -41,6 +45,7 @@ export class Cycle extends React.Component {
         audioPlay: "false",
       }));
       delet.pause();
+      //if button clack this code change to origin style
     }
     question = (
       <audio
@@ -51,6 +56,7 @@ export class Cycle extends React.Component {
         hidden="true"
       />
     );
+    // add music if you onClick on Icon
   };
   //Icon onClick() start this code
 
@@ -92,6 +98,7 @@ export class Cycle extends React.Component {
     );
   }
 }
+// add class and export it in the next file
 
 const styles = {
   cycleAnimation: {},
