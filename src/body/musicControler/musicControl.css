@@ -61,7 +61,28 @@
   animation: spin 4s linear infinite normal;
 }
 
-.iconDot {
+#oneDot {
+  position: absolute;
+  top: 90%;
+  left: 45%;
+}
+
+#twoDot {
+  position: absolute;
+  top: 90%;
+  left: 48%;
+}
+
+#treeDot {
+  position: absolute;
+  top: 90%;
+  left: 51%;
+}
+
+#fourDot {
+  position: absolute;
+  top: 90%;
+  left: 54%;
 }
 
 @-moz-keyframes spin {
