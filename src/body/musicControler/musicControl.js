@@ -94,10 +94,12 @@ export class Cycle extends React.Component {
           <Icon className="nextMusicIcon" icon="chevron-right" size={60} />
           <Icon className="backMusicIcon" icon="chevron-left" size={60} />
         </div>
-        <Icon id="oneDot" icon="dot" size={40} />
-        <Icon id="twoDot" icon="dot" size={40} />
-        <Icon id="treeDot" icon="dot" size={40} />
-        <Icon id="fourDot" icon="dot" size={40} />
+        <div className="iconsDot">
+          <Icon id="oneDot" icon="dot" size={40} />
+          <Icon id="twoDot" icon="dot" size={40} />
+          <Icon id="treeDot" icon="dot" size={40} />
+          <Icon id="fourDot" icon="dot" size={40} />
+        </div>
       </div>
     );
   }
@@ -108,6 +110,9 @@ const styles = {
   cycleAnimation: {},
   stopCycleAnimation: {
     animationPlayState: "paused",
+  },
+  colorEditor: {
+    color: "#d9ccff",
   },
 };
 // add style this style help img don't moving
