@@ -11,18 +11,10 @@
   cursor: pointer;
 }
 
-.nextMusicIcon:hover {
-  color: yellow;
-}
-
 .backMusicIcon {
   position: absolute;
   top: 43%;
   cursor: pointer;
-}
-
-.backMusicIcon:hover {
-  color: yellow;
 }
 
 .musicText {

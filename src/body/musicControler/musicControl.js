@@ -20,10 +20,17 @@ export class Cycle extends React.Component {
       audioPlay: "autoPlay",
       srcMusic: "",
     };
+    this.element = [styles.colorEditor, "", "", ""];
     this.toggle = this.toggle.bind(this);
     this.auto = React.createRef();
     // add states and bind and change in future
   }
+
+  next = () => {
+    if (this.element[0] == styles.colorEditor) {
+      this.element.splice(0, 0, "d");
+    }
+  };
 
   toggle = () => {
     question = "";
@@ -90,13 +97,18 @@ export class Cycle extends React.Component {
           </p>
         </div>
         <div id="music">{question}</div>
-        <div className="changeMusic">
-          <Icon className="nextMusicIcon" icon="chevron-right" size={60} />
+        <div className="chevrons">
+          <Icon
+            className="nextMusicIcon"
+            onClick={this.next.bind(this)}
+            icon="chevron-right"
+            size={60}
+          />
           <Icon className="backMusicIcon" icon="chevron-left" size={60} />
         </div>
         <div className="iconsDot">
-          <Icon id="oneDot" icon="dot" size={40} />
-          <Icon id="twoDot" icon="dot" size={40} />
+          <Icon style={this.element[0]} id="oneDot" icon="dot" size={40} />
+          <Icon style={this.element[1]} id="twoDot" icon="dot" size={40} />
           <Icon id="treeDot" icon="dot" size={40} />
           <Icon id="fourDot" icon="dot" size={40} />
         </div>
