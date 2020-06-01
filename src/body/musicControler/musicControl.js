@@ -94,6 +94,10 @@ export class Cycle extends React.Component {
           <Icon className="nextMusicIcon" icon="chevron-right" size={60} />
           <Icon className="backMusicIcon" icon="chevron-left" size={60} />
         </div>
+        <Icon className="iconDot" icon="dot" size={50} />
+        <Icon className="iconDot" icon="dot" size={50} />
+        <Icon className="iconDot" icon="dot" size={50} />
+        <Icon className="iconDot" icon="dot" size={50} />
       </div>
     );
   }
