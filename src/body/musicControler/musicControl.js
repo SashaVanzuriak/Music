@@ -30,9 +30,31 @@ export class Cycle extends React.Component {
 
   next = () => {
     this.state.music = InstantCrush;
+    if (this.state.cycleStyle == styles.cycleAnimation) {
+      delet = document.querySelector(".audio");
+      this.setState((state) => ({
+        cycleStyle: styles.stopCycleAnimation,
+        iconName: "play",
+        audioPlay: "false",
+      }));
+      delet.pause();
+      //if button clack this code change to origin style
+    }
   };
 
-  back = () => {};
+  back = () => {
+    if (this.state.cycleStyle == styles.cycleAnimation) {
+      delet = document.querySelector(".audio");
+      this.setState((state) => ({
+        cycleStyle: styles.stopCycleAnimation,
+        iconName: "play",
+        audioPlay: "false",
+      }));
+      delet.pause();
+      //if button clack this code change to origin style
+    }
+    this.state.music = GetLucky;
+  };
 
   toggle = () => {
     question = "";
