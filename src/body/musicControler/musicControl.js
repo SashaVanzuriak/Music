@@ -4,6 +4,7 @@ import daft from "./daft.jpg";
 import { Icon } from "evergreen-ui";
 import GetLucky from "./GetLucky.mp3";
 import InstantCrush from "./InstantCrush.mp3";
+import OneMoreTime from "./OneMoreTime.mp3";
 // import uses things
 
 let question = "";
@@ -29,7 +30,6 @@ export class Cycle extends React.Component {
   }
 
   next = () => {
-    this.state.music = InstantCrush;
     if (this.state.cycleStyle == styles.cycleAnimation) {
       delet = document.querySelector(".audio");
       this.setState((state) => ({
@@ -38,6 +38,11 @@ export class Cycle extends React.Component {
         audioPlay: "false",
       }));
       delet.pause();
+      if (this.state.music == InstantCrush) {
+        this.state.music = OneMoreTime;
+      } else {
+        this.state.music = InstantCrush;
+      }
       //if button clack this code change to origin style
     }
   };
@@ -53,7 +58,11 @@ export class Cycle extends React.Component {
       delet.pause();
       //if button clack this code change to origin style
     }
-    this.state.music = GetLucky;
+    if (this.state.music == OneMoreTime) {
+      this.state.music = InstantCrush;
+    } else {
+      this.state.music = GetLucky;
+    }
   };
 
   toggle = () => {
