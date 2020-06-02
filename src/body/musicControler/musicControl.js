@@ -3,6 +3,7 @@ import "./musicControl.css";
 import daft from "./daft.jpg";
 import { Icon } from "evergreen-ui";
 import GetLucky from "./GetLucky.mp3";
+import InstantCrush from "./InstantCrush.mp3";
 // import uses things
 
 let question = "";
@@ -19,6 +20,7 @@ export class Cycle extends React.Component {
       iconName: "play",
       audioPlay: "autoPlay",
       srcMusic: "",
+      music: GetLucky,
     };
     this.element = [styles.colorEditor, "", "", ""];
     this.toggle = this.toggle.bind(this);
@@ -27,10 +29,10 @@ export class Cycle extends React.Component {
   }
 
   next = () => {
-    if (this.element[0] == styles.colorEditor) {
-      this.element.splice(0, 0, "d");
-    }
+    this.state.music = InstantCrush;
   };
+
+  back = () => {};
 
   toggle = () => {
     question = "";
@@ -58,7 +60,7 @@ export class Cycle extends React.Component {
       <audio
         className="audio"
         autoPlay
-        src={GetLucky}
+        src={this.state.music}
         loop="true"
         hidden="true"
       />
@@ -104,7 +106,12 @@ export class Cycle extends React.Component {
             icon="chevron-right"
             size={60}
           />
-          <Icon className="backMusicIcon" icon="chevron-left" size={60} />
+          <Icon
+            onClick={this.back.bind(this)}
+            className="backMusicIcon"
+            icon="chevron-left"
+            size={60}
+          />
         </div>
         <div className="iconsDot">
           <Icon style={this.element[0]} id="oneDot" icon="dot" size={40} />
