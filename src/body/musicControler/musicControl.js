@@ -24,15 +24,14 @@ export class Cycle extends React.Component {
       music: GetLucky,
       header: "Get Lucky",
     };
-    this.element = [styles.colorEditor, "", "", ""];
+    this.element = ["", "", "", ""];
     this.toggle = this.toggle.bind(this);
-    this.auto = React.createRef();
     // add states and bind and change in future
   }
 
   next = () => {
-    if (this.state.music == InstantCrush) {
-      this.state.music = OneMoreTime;
+    this.state.music = OneMoreTime;
+    if (this.state.music === InstantCrush) {
       this.state.header = "One More Time";
     } else {
       this.state.music = InstantCrush;
@@ -48,13 +47,15 @@ export class Cycle extends React.Component {
       delet.pause();
       //if button clack this code change to origin style
     }
+    delet = document.querySelector("#oneDot");
+    delet.remove();
   };
 
   back = () => {
     if (this.state.header == "Instant Crush") {
       this.state.header = "Get Lucky";
-    } else {
-      this.state.header = "One More Time";
+    } else if (this.state.header == "One More Time") {
+      this.state.header = "Instant Crush";
     }
     if (this.state.music == OneMoreTime) {
       this.state.music = InstantCrush;
@@ -153,8 +154,8 @@ export class Cycle extends React.Component {
           />
         </div>
         <div className="iconsDot">
-          <Icon style={this.element[0]} id="oneDot" icon="dot" size={40} />
-          <Icon style={this.element[1]} id="twoDot" icon="dot" size={40} />
+          <Icon id="oneDot" icon="dot" size={40} />
+          <Icon id="twoDot" icon="dot" size={40} />
           <Icon id="treeDot" icon="dot" size={40} />
           <Icon id="fourDot" icon="dot" size={40} />
         </div>
