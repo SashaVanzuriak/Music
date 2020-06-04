@@ -11,6 +11,9 @@ let question = "";
 // add new sting next in class add music
 let delet = "";
 // add new string next  stop music or return play music
+let dot = <Icon color="red" id="oneDot" icon="dot" size={40} />;
+
+let headerText = "Get Lucky";
 
 export class Cycle extends React.Component {
   constructor(props) {
@@ -23,6 +26,7 @@ export class Cycle extends React.Component {
       srcMusic: "",
       music: GetLucky,
       header: "Get Lucky",
+      colorStyle: "",
     };
     this.element = ["", "", "", ""];
     this.toggle = this.toggle.bind(this);
@@ -30,6 +34,11 @@ export class Cycle extends React.Component {
   }
 
   next = () => {
+    this.setState((state) => ({
+      colorStyle: styles.colorEditor,
+    }));
+    dot = "";
+    headerText = "d";
     this.state.music = OneMoreTime;
     if (this.state.music === InstantCrush) {
       this.state.header = "One More Time";
@@ -37,18 +46,6 @@ export class Cycle extends React.Component {
       this.state.music = InstantCrush;
       this.state.header = "Instant Crush";
     }
-    if (this.state.cycleStyle == styles.cycleAnimation) {
-      delet = document.querySelector(".audio");
-      this.setState((state) => ({
-        cycleStyle: styles.stopCycleAnimation,
-        iconName: "play",
-        audioPlay: "false",
-      }));
-      delet.pause();
-      //if button clack this code change to origin style
-    }
-    delet = document.querySelector("#oneDot");
-    delet.remove();
   };
 
   back = () => {
@@ -125,7 +122,7 @@ export class Cycle extends React.Component {
           onClick={this.toggle}
         />
         <div>
-          <p className="nameMusic">{this.state.header}</p>
+          <p className="nameMusic">{headerText}</p>
           <p className="musicText">
             "Get Lucky" is a song by French electronic music duo Daft Punk,
             featuring vocals by Pharrell Williams and co-written by the duo,
@@ -153,9 +150,14 @@ export class Cycle extends React.Component {
             size={60}
           />
         </div>
-        <div className="iconsDot">
-          <Icon id="oneDot" icon="dot" size={40} />
-          <Icon id="twoDot" icon="dot" size={40} />
+        <div className="iconsDot">{dot}</div>
+        <div>
+          <Icon
+            style={this.state.colorStyle}
+            id="twoDot"
+            icon="dot"
+            size={40}
+          />
           <Icon id="treeDot" icon="dot" size={40} />
           <Icon id="fourDot" icon="dot" size={40} />
         </div>
