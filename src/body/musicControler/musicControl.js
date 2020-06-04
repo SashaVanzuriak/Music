@@ -11,9 +11,6 @@ let question = "";
 // add new sting next in class add music
 let delet = "";
 // add new string next  stop music or return play music
-let dot = <Icon color="red" id="oneDot" icon="dot" size={40} />;
-
-let headerText = "Get Lucky";
 
 export class Cycle extends React.Component {
   constructor(props) {
@@ -37,11 +34,9 @@ export class Cycle extends React.Component {
     this.setState((state) => ({
       colorStyle: styles.colorEditor,
     }));
-    dot = "";
-    headerText = "d";
-    this.state.music = OneMoreTime;
     if (this.state.music === InstantCrush) {
       this.state.header = "One More Time";
+      this.state.music = OneMoreTime;
     } else {
       this.state.music = InstantCrush;
       this.state.header = "Instant Crush";
@@ -122,7 +117,7 @@ export class Cycle extends React.Component {
           onClick={this.toggle}
         />
         <div>
-          <p className="nameMusic">{headerText}</p>
+          <p className="nameMusic">{this.state.header}</p>
           <p className="musicText">
             "Get Lucky" is a song by French electronic music duo Daft Punk,
             featuring vocals by Pharrell Williams and co-written by the duo,
@@ -150,8 +145,8 @@ export class Cycle extends React.Component {
             size={60}
           />
         </div>
-        <div className="iconsDot">{dot}</div>
         <div>
+          <Icon color="red" id="oneDot" icon="dot" size={40} />
           <Icon
             style={this.state.colorStyle}
             id="twoDot"
