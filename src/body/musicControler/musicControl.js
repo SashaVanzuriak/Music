@@ -5,6 +5,7 @@ import { Icon } from "evergreen-ui";
 import GetLucky from "./GetLucky.mp3";
 import InstantCrush from "./InstantCrush.mp3";
 import OneMoreTime from "./OneMoreTime.mp3";
+import AroundTheWorld from "./AroundTheWorld.mp3";
 // import uses things
 
 let question = "";
@@ -43,6 +44,11 @@ export class Cycle extends React.Component {
         header: "One More Time",
         music: OneMoreTime,
       }));
+    } else if (this.state.music === OneMoreTime) {
+      this.setState((state) => ({
+        header: "Around the World",
+        music: AroundTheWorld,
+      }));
     }
 
     if (this.state.cycleStyle == styles.cycleAnimation) {
@@ -67,6 +73,11 @@ export class Cycle extends React.Component {
       this.setState((state) => ({
         header: "Instant Crush",
         music: InstantCrush,
+      }));
+    } else if (this.state.music === AroundTheWorld) {
+      this.setState((state) => ({
+        header: "One More Time",
+        music: OneMoreTime,
       }));
     }
 
