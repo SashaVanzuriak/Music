@@ -25,35 +25,51 @@ export class Cycle extends React.Component {
       header: "Get Lucky",
       colorStyle: "",
     };
-    this.element = ["", "", "", ""];
+    this.element = [styles.colorEditor, "", "", ""];
     this.toggle = this.toggle.bind(this);
     // add states and bind and change in future
   }
 
   next = () => {
-    this.setState((state) => ({
-      colorStyle: styles.colorEditor,
-    }));
-    if (this.state.music === InstantCrush) {
-      this.state.header = "One More Time";
-      this.state.music = OneMoreTime;
-    } else {
-      this.state.music = InstantCrush;
-      this.state.header = "Instant Crush";
+    if (this.state.music === GetLucky) {
+      this.setState((state) => ({
+        header: "Insrant Crush",
+        music: InstantCrush,
+      }));
+      this.element[0] = "";
+      this.element[1] = styles.colorEditor;
+    } else if (this.state.music === InstantCrush) {
+      this.setState((state) => ({
+        header: "One More Time",
+        music: OneMoreTime,
+      }));
+    }
+
+    if (this.state.cycleStyle == styles.cycleAnimation) {
+      delet = document.querySelector(".audio");
+      this.setState((state) => ({
+        cycleStyle: styles.stopCycleAnimation,
+        iconName: "play",
+        audioPlay: "false",
+      }));
+      delet.pause();
+      //if button clack this code change to origin style
     }
   };
 
   back = () => {
-    if (this.state.header == "Instant Crush") {
-      this.state.header = "Get Lucky";
-    } else if (this.state.header == "One More Time") {
-      this.state.header = "Instant Crush";
+    if (this.state.music === InstantCrush) {
+      this.setState((state) => ({
+        header: "Get Lucky",
+        music: GetLucky,
+      }));
+    } else if (this.state.music === OneMoreTime) {
+      this.setState((state) => ({
+        header: "Instant Crush",
+        music: InstantCrush,
+      }));
     }
-    if (this.state.music == OneMoreTime) {
-      this.state.music = InstantCrush;
-    } else {
-      this.state.music = GetLucky;
-    }
+
     if (this.state.cycleStyle == styles.cycleAnimation) {
       delet = document.querySelector(".audio");
       this.setState((state) => ({
@@ -146,15 +162,10 @@ export class Cycle extends React.Component {
           />
         </div>
         <div>
-          <Icon color="red" id="oneDot" icon="dot" size={40} />
-          <Icon
-            style={this.state.colorStyle}
-            id="twoDot"
-            icon="dot"
-            size={40}
-          />
-          <Icon id="treeDot" icon="dot" size={40} />
-          <Icon id="fourDot" icon="dot" size={40} />
+          <Icon style={this.element[0]} id="oneDot" icon="dot" size={40} />
+          <Icon style={this.element[1]} id="twoDot" icon="dot" size={40} />
+          <Icon style={this.element[2]} id="treeDot" icon="dot" size={40} />
+          <Icon style={this.element[3]} id="fourDot" icon="dot" size={40} />
         </div>
       </div>
     );
