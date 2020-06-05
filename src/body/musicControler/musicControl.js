@@ -44,11 +44,15 @@ export class Cycle extends React.Component {
         header: "One More Time",
         music: OneMoreTime,
       }));
+      this.element[1] = "";
+      this.element[2] = styles.colorEditor;
     } else if (this.state.music === OneMoreTime) {
       this.setState((state) => ({
         header: "Around the World",
         music: AroundTheWorld,
       }));
+      this.element[2] = "";
+      this.element[3] = styles.colorEditor;
     }
 
     if (this.state.cycleStyle == styles.cycleAnimation) {
@@ -69,16 +73,22 @@ export class Cycle extends React.Component {
         header: "Get Lucky",
         music: GetLucky,
       }));
+      this.element[1] = "";
+      this.element[0] = styles.colorEditor;
     } else if (this.state.music === OneMoreTime) {
       this.setState((state) => ({
         header: "Instant Crush",
         music: InstantCrush,
       }));
+      this.element[2] = "";
+      this.element[1] = styles.colorEditor;
     } else if (this.state.music === AroundTheWorld) {
       this.setState((state) => ({
         header: "One More Time",
         music: OneMoreTime,
       }));
+      this.element[3] = "";
+      this.element[2] = styles.colorEditor;
     }
 
     if (this.state.cycleStyle == styles.cycleAnimation) {
