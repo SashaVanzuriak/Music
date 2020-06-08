@@ -1,7 +1,7 @@
 .DaftPunkText {
   font-family: cursive;
   text-align: center;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .nextMusicIcon {
@@ -17,20 +17,23 @@
   cursor: pointer;
 }
 
-.musicText {
+.textDiv {
   position: absolute;
   left: 50%;
   font-family: cursive;
   max-width: 40%;
   font-size: 25px;
   top: 35%;
+  border-radius: 10px;
+  border: ridge black;
+  border-width: 6px;
 }
 
 .nameMusic {
   position: absolute;
-  top: 25%;
+  top: 23%;
   left: 65%;
-  font-size: 30px;
+  font-size: 35px;
   font-family: cursive;
 }
 
