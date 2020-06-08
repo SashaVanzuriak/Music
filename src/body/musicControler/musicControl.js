@@ -200,7 +200,7 @@ const styles = {
     animationPlayState: "paused",
   },
   colorEditor: {
-    color: "#d9ccff",
+    color: "white",
   },
 };
 // add style this style help img don't moving
