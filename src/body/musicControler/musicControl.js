@@ -55,7 +55,7 @@ export class Cycle extends React.Component {
       this.element[3] = styles.colorEditor;
     }
 
-    if (this.state.cycleStyle == styles.cycleAnimation) {
+    if (this.state.cycleStyle === styles.cycleAnimation) {
       delet = document.querySelector(".audio");
       this.setState((state) => ({
         cycleStyle: styles.stopCycleAnimation,
@@ -91,7 +91,7 @@ export class Cycle extends React.Component {
       this.element[2] = styles.colorEditor;
     }
 
-    if (this.state.cycleStyle == styles.cycleAnimation) {
+    if (this.state.cycleStyle === styles.cycleAnimation) {
       delet = document.querySelector(".audio");
       this.setState((state) => ({
         cycleStyle: styles.stopCycleAnimation,
@@ -111,11 +111,11 @@ export class Cycle extends React.Component {
       audioPlay: "false",
       srcMusic: { GetLucky },
     }));
-    if (delet == document.querySelector(".audio")) {
+    if (delet === document.querySelector(".audio")) {
       delet.play();
       // if delet = true this return music to play
     }
-    if (this.state.cycleStyle == styles.cycleAnimation) {
+    if (this.state.cycleStyle === styles.cycleAnimation) {
       delet = document.querySelector(".audio");
       this.setState((state) => ({
         cycleStyle: styles.stopCycleAnimation,
