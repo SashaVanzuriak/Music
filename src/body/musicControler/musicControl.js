@@ -17,7 +17,6 @@ export class Cycle extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "DaftPunkImg",
       cycleStyle: styles.stopCycleAnimation,
       iconName: "play",
       audioPlay: "autoPlay",
@@ -150,7 +149,7 @@ export class Cycle extends React.Component {
       <div>
         <img
           src={daft}
-          className={this.state.name}
+          className="DaftPunkImg"
           style={this.state.cycleStyle}
         ></img>
         <Icon
