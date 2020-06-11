@@ -32,7 +32,31 @@
 .nameMusic {
   position: absolute;
   top: 23%;
+  left: 66%;
+  font-size: 35px;
+  font-family: cursive;
+}
+
+.InstantCrushMusic {
+  position: absolute;
+  top: 23%;
   left: 65%;
+  font-size: 35px;
+  font-family: cursive;
+}
+
+.OneMoreTimeMusic {
+  position: absolute;
+  top: 23%;
+  left: 64%;
+  font-size: 35px;
+  font-family: cursive;
+}
+
+.AroundTheWorldMusic {
+  position: absolute;
+  top: 23%;
+  left: 63.5%;
   font-size: 35px;
   font-family: cursive;
 }

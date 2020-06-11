@@ -25,6 +25,7 @@ export class Cycle extends React.Component {
       music: GetLucky,
       header: "Get Lucky",
       colorStyle: "",
+      classMusicName: "nameMusic",
     };
     this.element = [styles.colorEditor, "", "", ""];
     this.toggle = this.toggle.bind(this);
@@ -36,6 +37,7 @@ export class Cycle extends React.Component {
       this.setState((state) => ({
         header: "Insrant Crush",
         music: InstantCrush,
+        classMusicName: "InstantCrushMusic",
       }));
       this.element[0] = "";
       this.element[1] = styles.colorEditor;
@@ -43,6 +45,7 @@ export class Cycle extends React.Component {
       this.setState((state) => ({
         header: "One More Time",
         music: OneMoreTime,
+        classMusicName: "OneMoreTimeMusic",
       }));
       this.element[1] = "";
       this.element[2] = styles.colorEditor;
@@ -50,6 +53,7 @@ export class Cycle extends React.Component {
       this.setState((state) => ({
         header: "Around the World",
         music: AroundTheWorld,
+        classMusicName: "AroundTheWorldMusic",
       }));
       this.element[2] = "";
       this.element[3] = styles.colorEditor;
@@ -72,6 +76,7 @@ export class Cycle extends React.Component {
       this.setState((state) => ({
         header: "Get Lucky",
         music: GetLucky,
+        classMusicName: "nameMusic",
       }));
       this.element[1] = "";
       this.element[0] = styles.colorEditor;
@@ -79,6 +84,7 @@ export class Cycle extends React.Component {
       this.setState((state) => ({
         header: "Instant Crush",
         music: InstantCrush,
+        classMusicName: "InstantCrushMusic",
       }));
       this.element[2] = "";
       this.element[1] = styles.colorEditor;
@@ -86,6 +92,7 @@ export class Cycle extends React.Component {
       this.setState((state) => ({
         header: "One More Time",
         music: OneMoreTime,
+        classMusicName: "OneMoreTimeMusic",
       }));
       this.element[3] = "";
       this.element[2] = styles.colorEditor;
@@ -154,7 +161,7 @@ export class Cycle extends React.Component {
           onClick={this.toggle}
         />
         <div className="TextDiv">
-          <p className="nameMusic">{this.state.header}</p>
+          <p className={this.state.classMusicName}>{this.state.header}</p>
           <div className="textDiv">
             <p className="musicText">
               "Get Lucky" is a song by French electronic music duo Daft Punk,
