@@ -26,7 +26,7 @@
   top: 35%;
   border-radius: 10px;
   border: ridge black;
-  border-width: 6px;
+  border-width: 5px;
 }
 
 .nameMusic {
@@ -83,25 +83,25 @@
 #oneDot {
   position: absolute;
   top: 90%;
-  left: 45%;
+  left: 43.5%;
 }
 
 #twoDot {
   position: absolute;
   top: 90%;
-  left: 48%;
+  left: 46.5%;
 }
 
 #treeDot {
   position: absolute;
   top: 90%;
-  left: 51%;
+  left: 49.5%;
 }
 
 #fourDot {
   position: absolute;
   top: 90%;
-  left: 54%;
+  left: 52.5%;
 }
 
 @-moz-keyframes spin {
