@@ -1,11 +1,13 @@
 import React from "react";
 import "./musicControl.css";
-import daft from "./daft.jpg";
+import GetLuckyImg from "./GetLucky.jpg";
 import { Icon } from "evergreen-ui";
 import GetLucky from "./GetLucky.mp3";
 import InstantCrush from "./InstantCrush.mp3";
 import OneMoreTime from "./OneMoreTime.mp3";
 import AroundTheWorld from "./AroundTheWorld.mp3";
+import InstantCrushImg from "./InstantCrush.jpeg";
+import OneMoreTimeImg from "./OneMoreTime.jpg";
 // import uses things
 
 let question = "";
@@ -21,6 +23,7 @@ export class Cycle extends React.Component {
       iconName: "play",
       audioPlay: "autoPlay",
       srcMusic: "",
+      iconChange: GetLuckyImg,
       music: GetLucky,
       header: "Get Lucky",
       colorStyle: "",
@@ -37,6 +40,7 @@ export class Cycle extends React.Component {
         header: "Insrant Crush",
         music: InstantCrush,
         classMusicName: "InstantCrushMusic",
+        iconChange: InstantCrushImg,
       }));
       this.element[0] = "";
       this.element[1] = styles.colorEditor;
@@ -45,6 +49,7 @@ export class Cycle extends React.Component {
         header: "One More Time",
         music: OneMoreTime,
         classMusicName: "OneMoreTimeMusic",
+        iconChange: OneMoreTimeImg,
       }));
       this.element[1] = "";
       this.element[2] = styles.colorEditor;
@@ -79,6 +84,7 @@ export class Cycle extends React.Component {
       }));
       this.element[1] = "";
       this.element[0] = styles.colorEditor;
+      //if this music is Instant Crush and change it to GetLucky
     } else if (this.state.music === OneMoreTime) {
       this.setState((state) => ({
         header: "Instant Crush",
@@ -87,6 +93,7 @@ export class Cycle extends React.Component {
       }));
       this.element[2] = "";
       this.element[1] = styles.colorEditor;
+      //if this music is One More Time and change it to Instant Crush
     } else if (this.state.music === AroundTheWorld) {
       this.setState((state) => ({
         header: "One More Time",
@@ -148,7 +155,7 @@ export class Cycle extends React.Component {
     return (
       <div>
         <img
-          src={daft}
+          src={this.state.iconChange}
           className="DaftPunkImg"
           style={this.state.cycleStyle}
         ></img>
