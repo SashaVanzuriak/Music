@@ -1,13 +1,17 @@
 import React from "react";
 import "./musicControl.css";
-import GetLuckyImg from "./GetLucky.jpg";
 import { Icon } from "evergreen-ui";
+
 import GetLucky from "./GetLucky.mp3";
+import GetLuckyImg from "./GetLucky.jpg";
+
 import InstantCrush from "./InstantCrush.mp3";
-import OneMoreTime from "./OneMoreTime.mp3";
-import AroundTheWorld from "./AroundTheWorld.mp3";
 import InstantCrushImg from "./InstantCrush.jpeg";
+
+import OneMoreTime from "./OneMoreTime.mp3";
 import OneMoreTimeImg from "./OneMoreTime.jpg";
+
+import HarderBetterStronger from "./HarderBetterStronger.mp3";
 import HarderBetterStrongerImg from "./HarderBetterStronger.jpg";
 // import uses things
 
@@ -56,16 +60,17 @@ export class Cycle extends React.Component {
       this.element[2] = styles.colorEditor;
     } else if (this.state.music === OneMoreTime) {
       this.setState((state) => ({
-        header: "Around the World",
-        music: AroundTheWorld,
-        classMusicName: "AroundTheWorldMusic",
+        header: "Harder Better Faster Stronger",
+        music: HarderBetterStronger,
+        classMusicName: "HarderBetterFasterStronger",
         iconChange: HarderBetterStrongerImg,
       }));
       this.element[2] = "";
       this.element[3] = styles.colorEditor;
     }
-
-    if (this.state.cycleStyle === styles.cycleAnimation) {
+    if (this.state.music === HarderBetterStronger) {
+      console.log(2);
+    } else if (this.state.cycleStyle === styles.cycleAnimation) {
       delet = document.querySelector(".audio");
       this.setState((state) => ({
         cycleStyle: styles.stopCycleAnimation,
@@ -83,6 +88,7 @@ export class Cycle extends React.Component {
         header: "Get Lucky",
         music: GetLucky,
         classMusicName: "nameMusic",
+        iconChange: GetLuckyImg,
       }));
       this.element[1] = "";
       this.element[0] = styles.colorEditor;
@@ -92,21 +98,24 @@ export class Cycle extends React.Component {
         header: "Instant Crush",
         music: InstantCrush,
         classMusicName: "InstantCrushMusic",
+        iconChange: InstantCrushImg,
       }));
       this.element[2] = "";
       this.element[1] = styles.colorEditor;
       //if this music is One More Time and change it to Instant Crush
-    } else if (this.state.music === AroundTheWorld) {
+    } else if (this.state.music === HarderBetterStronger) {
       this.setState((state) => ({
         header: "One More Time",
         music: OneMoreTime,
         classMusicName: "OneMoreTimeMusic",
+        iconChange: OneMoreTimeImg,
       }));
       this.element[3] = "";
       this.element[2] = styles.colorEditor;
     }
-
-    if (this.state.cycleStyle === styles.cycleAnimation) {
+    if (this.state.music === GetLucky) {
+      console.log(1);
+    } else if (this.state.cycleStyle === styles.cycleAnimation) {
       delet = document.querySelector(".audio");
       this.setState((state) => ({
         cycleStyle: styles.stopCycleAnimation,
