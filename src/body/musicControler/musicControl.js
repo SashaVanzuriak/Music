@@ -8,6 +8,7 @@ import OneMoreTime from "./OneMoreTime.mp3";
 import AroundTheWorld from "./AroundTheWorld.mp3";
 import InstantCrushImg from "./InstantCrush.jpeg";
 import OneMoreTimeImg from "./OneMoreTime.jpg";
+import HarderBetterStrongerImg from "./HarderBetterStronger.jpg";
 // import uses things
 
 let question = "";
@@ -58,6 +59,7 @@ export class Cycle extends React.Component {
         header: "Around the World",
         music: AroundTheWorld,
         classMusicName: "AroundTheWorldMusic",
+        iconChange: HarderBetterStrongerImg,
       }));
       this.element[2] = "";
       this.element[3] = styles.colorEditor;
