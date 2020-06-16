@@ -226,7 +226,7 @@ const styles = {
     animationPlayState: "paused",
   },
   colorEditor: {
-    color: "white",
+    color: "gray",
   },
 };
 // add style this style help img don't moving
