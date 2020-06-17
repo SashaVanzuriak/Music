@@ -33,6 +33,8 @@ export class Cycle extends React.Component {
       header: "Get Lucky",
       colorStyle: "",
       classMusicName: "nameMusic",
+      visibility: styles.hidden,
+      nextvisibility: styles.nonHiden,
     };
     this.element = [styles.colorEditor, "", "", ""];
     this.toggle = this.toggle.bind(this);
@@ -46,6 +48,7 @@ export class Cycle extends React.Component {
         music: InstantCrush,
         classMusicName: "InstantCrushMusic",
         iconChange: InstantCrushImg,
+        visibility: styles.nonHiden,
       }));
       this.element[0] = "";
       this.element[1] = styles.colorEditor;
@@ -64,13 +67,12 @@ export class Cycle extends React.Component {
         music: HarderBetterStronger,
         classMusicName: "HarderBetterFasterStronger",
         iconChange: HarderBetterStrongerImg,
+        nextvisibility: styles.hidden,
       }));
       this.element[2] = "";
       this.element[3] = styles.colorEditor;
     }
-    if (this.state.music === HarderBetterStronger) {
-      console.log(2);
-    } else if (this.state.cycleStyle === styles.cycleAnimation) {
+    if (this.state.cycleStyle === styles.cycleAnimation) {
       delet = document.querySelector(".audio");
       this.setState((state) => ({
         cycleStyle: styles.stopCycleAnimation,
@@ -89,6 +91,7 @@ export class Cycle extends React.Component {
         music: GetLucky,
         classMusicName: "nameMusic",
         iconChange: GetLuckyImg,
+        visibility: styles.hidden,
       }));
       this.element[1] = "";
       this.element[0] = styles.colorEditor;
@@ -109,13 +112,12 @@ export class Cycle extends React.Component {
         music: OneMoreTime,
         classMusicName: "OneMoreTimeMusic",
         iconChange: OneMoreTimeImg,
+        nextvisibility: styles.nonHiden,
       }));
       this.element[3] = "";
       this.element[2] = styles.colorEditor;
     }
-    if (this.state.music === GetLucky) {
-      console.log(1);
-    } else if (this.state.cycleStyle === styles.cycleAnimation) {
+    if (this.state.cycleStyle === styles.cycleAnimation) {
       delet = document.querySelector(".audio");
       this.setState((state) => ({
         cycleStyle: styles.stopCycleAnimation,
@@ -199,11 +201,13 @@ export class Cycle extends React.Component {
             className="nextMusicIcon"
             onClick={this.next.bind(this)}
             icon="chevron-right"
+            style={this.state.nextvisibility}
             size={60}
           />
           <Icon
             onClick={this.back.bind(this)}
             className="backMusicIcon"
+            style={this.state.visibility}
             icon="chevron-left"
             size={60}
           />
@@ -227,6 +231,12 @@ const styles = {
   },
   colorEditor: {
     color: "gray",
+  },
+  hidden: {
+    visibility: "hidden",
+  },
+  nonHiden: {
+    visibility: "visible",
   },
 };
 // add style this style help img don't moving
