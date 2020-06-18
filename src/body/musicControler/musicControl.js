@@ -20,6 +20,48 @@ let question = "";
 let delet = "";
 // add new string next  stop music or return play music
 
+const GetLuckyText = (
+  <p className="musicText">
+    "Get Lucky" is a song by French electronic music duo Daft Punk, featuring
+    vocals by Pharrell Williams and co-written by the duo, Williams, and Nile
+    Rodgers. It is the lead single from Daft Punk's fourth studio album, Random
+    Access Memories.Before its release as a single, "Get Lucky" was featured in
+    television advertisements broadcast during Saturday Night Live.
+  </p>
+);
+
+const InstantCrushText = (
+  <p className="musicText">
+    "Instant Crush" is a song written, produced, and performed by French
+    electronic music duo Daft Punk and American musician Julian Casablancas. It
+    was released as the fourth single from Daft Punk's fourth studio album,
+    Random Access Memories (2013), on 22 November 2013. It was number 58 on
+    Rolling Stone magazine's 100 Best Songs of 2013 list.
+  </p>
+);
+
+const OneMoreTimeText = (
+  <p className="musicText">
+    "One More Time" is a song by French electronic music duo Daft Punk, first
+    released as a single on 30 November 2000 and later included in the 2001
+    album Discovery. It is a French house song featuring a vocal performance by
+    Romanthony that is stylistically autotuned. The music video of the song
+    forms part of the 2003 anime film, Interstella 5555: The 5tory of the 5ecret
+    5tar 5ystem.
+  </p>
+);
+
+const HarderBetterFasterStrongerText = (
+  <p className="musicText">
+    "Harder, Better, Faster, Stronger" is a song by French duo Daft Punk,
+    released in October 2001 as the fourth single from their second studio album
+    Discovery. A live version of "Harder, Better, Faster, Stronger" was released
+    as a single from the album Alive 2007 on 15 October 2007.In October 2011,
+    NME placed it at number 132 on its list "150 Best Tracks of the Past 15
+    Years".
+  </p>
+);
+
 export class Cycle extends React.Component {
   constructor(props) {
     super(props);
@@ -35,6 +77,8 @@ export class Cycle extends React.Component {
       classMusicName: "nameMusic",
       visibility: styles.hidden,
       nextvisibility: styles.nonHiden,
+      textMusic: GetLuckyText,
+      daftPunk: "DaftPunkImg",
     };
     this.element = [styles.colorEditor, "", "", ""];
     this.toggle = this.toggle.bind(this);
@@ -49,6 +93,8 @@ export class Cycle extends React.Component {
         classMusicName: "InstantCrushMusic",
         iconChange: InstantCrushImg,
         visibility: styles.nonHiden,
+        textMusic: InstantCrushText,
+        daftPunk: "DaftPunkTwo",
       }));
       this.element[0] = "";
       this.element[1] = styles.colorEditor;
@@ -58,6 +104,8 @@ export class Cycle extends React.Component {
         music: OneMoreTime,
         classMusicName: "OneMoreTimeMusic",
         iconChange: OneMoreTimeImg,
+        textMusic: OneMoreTimeText,
+        daftPunk: "DaftPunkTwo",
       }));
       this.element[1] = "";
       this.element[2] = styles.colorEditor;
@@ -68,6 +116,8 @@ export class Cycle extends React.Component {
         classMusicName: "HarderBetterFasterStronger",
         iconChange: HarderBetterStrongerImg,
         nextvisibility: styles.hidden,
+        textMusic: HarderBetterFasterStrongerText,
+        daftPunk: "DaftPunkTwo",
       }));
       this.element[2] = "";
       this.element[3] = styles.colorEditor;
@@ -92,6 +142,8 @@ export class Cycle extends React.Component {
         classMusicName: "nameMusic",
         iconChange: GetLuckyImg,
         visibility: styles.hidden,
+        textMusic: GetLuckyText,
+        daftPunk: "DaftPunkTwo",
       }));
       this.element[1] = "";
       this.element[0] = styles.colorEditor;
@@ -102,6 +154,8 @@ export class Cycle extends React.Component {
         music: InstantCrush,
         classMusicName: "InstantCrushMusic",
         iconChange: InstantCrushImg,
+        textMusic: InstantCrushText,
+        daftPunk: "DaftPunkTwo",
       }));
       this.element[2] = "";
       this.element[1] = styles.colorEditor;
@@ -113,6 +167,8 @@ export class Cycle extends React.Component {
         classMusicName: "OneMoreTimeMusic",
         iconChange: OneMoreTimeImg,
         nextvisibility: styles.nonHiden,
+        textMusic: OneMoreTimeText,
+        daftPunk: "DaftPunkTwo",
       }));
       this.element[3] = "";
       this.element[2] = styles.colorEditor;
@@ -140,6 +196,11 @@ export class Cycle extends React.Component {
     if (delet === document.querySelector(".audio")) {
       delet.play();
       // if delet = true this return music to play
+    }
+    if (this.state.daftPunk === "DaftPunkTwo") {
+      this.setState((statte) => ({
+        daftPunk: "DaftPunkImg",
+      }));
     }
     if (this.state.cycleStyle === styles.cycleAnimation) {
       delet = document.querySelector(".audio");
@@ -169,7 +230,7 @@ export class Cycle extends React.Component {
       <div>
         <img
           src={this.state.iconChange}
-          className="DaftPunkImg"
+          className={this.state.daftPunk}
           style={this.state.cycleStyle}
         ></img>
         <Icon
@@ -181,19 +242,7 @@ export class Cycle extends React.Component {
         />
         <div className="TextDiv">
           <p className={this.state.classMusicName}>{this.state.header}</p>
-          <div className="textDiv">
-            <p className="musicText">
-              "Get Lucky" is a song by French electronic music duo Daft Punk,
-              featuring vocals by Pharrell Williams and co-written by the duo,
-              Williams, and Nile Rodgers. It is the lead single from Daft Punk's
-              fourth studio album, Random Access Memories.Before its release as
-              a single, "Get Lucky" was featured in television advertisements
-              broadcast during Saturday Night Live, after which Rodgers and
-              Williams announced their involvement in the track.Small excerpts
-              also appear throughout the promotional video series The
-              Collaborators.
-            </p>
-          </div>
+          <div className="textDiv">{this.state.textMusic}</div>
         </div>
         <div id="music">{question}</div>
         <div className="chevrons">
